@@ -15,8 +15,9 @@ public class Application {
                 // TODO: 프로그램 구현
                 // TODO 추후 Coin 클래스 or 메소드로 구현
                 // TODO 주요 기능마다 테스트 코드 작성
-                inputCoin();
-                System.out.println("입력란 종료");
+                String coinInput = new String();
+                inputCoin(coinInput);
+                System.out.println("금액 입력 종료");
 
                 System.out.println("당첨 번호를 입력해 주세요.");  //TODO 추후 당첨번호 입력 메소드 분리
                 String lottoInput = Console.readLine();
@@ -25,14 +26,16 @@ public class Application {
                 for (int i = 0; i < lottoArray.length; i++) {
                         lottoNumbers[i] = Integer.parseInt(lottoArray[i].trim());
                 }
-//                System.out.println(lottoStr);
+                System.out.println(lottoNumbers);
+
+//                Lotto lottoTest = lottoInput.split(",");
 
         }
 
-        public static void inputCoin() {
+        public static void inputCoin(String coinInput) {
                 while (true) {
                         System.out.println("구입금액을 입력해 주세요.");   //구입 금액 입력
-                        String coinInput = Console.readLine();
+                        coinInput = Console.readLine();
                         try {
                                 if (validCoinInput(coinInput)) {
                                         int coin = Integer.parseInt(coinInput) / 1000;
@@ -61,7 +64,7 @@ public class Application {
                         lottoList.add(new Lotto(numbers));         //TODO 추후수정 임시 변수 저장
                         System.out.println(numbers);              //로또 확인값
                 }
-                        System.out.println("lottoList = " + lottoList);
+                System.out.println("lottoList = " + lottoList.get(0));
         }
 
 }
