@@ -11,14 +11,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class MethodTest extends NsTest {
         @Test
         public void 입력값이_유효할때() {
-                assertTrue(Application.validCoinInput("3000"));
-                assertTrue(Application.validCoinInput("10000"));
+                assertTrue(Lotto.validCoinInput("3000"));
+                assertTrue(Lotto.validCoinInput("10000"));
         }
         @Test
         public void 입력값이_유효하지_않을때() {
-                assertFalse(Application.validCoinInput("1001"));
-                assertFalse(Application.validCoinInput("900"));
-                assertFalse(Application.validCoinInput("abc")); // 문자열은 유효하지 않음
+                assertFalse(Lotto.validCoinInput("1001"));
+                assertFalse(Lotto.validCoinInput("900"));
+                assertFalse(Lotto.validCoinInput("abc")); // 문자열은 유효하지 않음
         }
 
         @Override
